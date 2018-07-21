@@ -24,6 +24,7 @@ Route::resource('Alumnomaestria', 'Alumnomaestria\AlumnomaestriaController', ['o
 
 Route::resource('Alumnopregrado', 'Alumnopregrado\AlumnopregradoController', ['only' => ['index','show']]);
 
+Route::resource('Operacionb', 'Operacionb\OperacionbController', ['only' => ['index','show']]);
 
 Route::resource('Beca', 'Beca\BecaController', ['only' => ['index','show']]);
 
