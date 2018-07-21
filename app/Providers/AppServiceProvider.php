@@ -12,8 +12,9 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        //
+    {   //linea para lo del utf8mb4 para corregir
+        Schema::defaultStringLenght(191);
+
     }
 
     /**
