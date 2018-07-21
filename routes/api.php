@@ -13,6 +13,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+/*Rutas del apibeca*/
+Route::resource('Alumnodoctorado', 'Alumnodoctorado\AlumnodoctoradoController', ['only' => ['index','show']]);
+
+Route::resource('Alumnomaestria', 'Alumnomaestria\AlumnomaestriaController', ['only' => ['index','show']]);
+
+Route::resource('Alumnopregrado', 'Alumnopregrado\AlumnopregradoController', ['only' => ['index','show']]);
+
+
+Route::resource('Beca', 'Beca\BecaController', ['only' => ['index','show']]);
+
+
+Route::resource('User', 'User\UserController', ['except' => ['create','edit']]);
