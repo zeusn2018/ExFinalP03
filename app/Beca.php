@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Alumnomaestria;
+use App\Alumnopregrado;
+use App\Alumnodoctorado;
 use Illuminate\Database\Eloquent\Model;
 
 class Beca extends Model
@@ -21,6 +24,28 @@ class Beca extends Model
     {
     	return $this->status == Beca::BECA_DISPONIBLE;
     }
+
+    public function Operacionespregrado()
+    {
+        return $this->belongsTo(Alumnopregrado::class);
+    }
+
+    public function Operacionesmaestria()
+    {
+        return $this->belongsTo(Alumnomaestria::class);
+    }
+
+    public function Operacionesdoctorado()
+    {
+        return $this->belongsTo(Alumnodoctorado::class);
+    }
+
+
+    public function Operacionesbeca()
+    {
+        return $this->hasMany(Operacionb::class);
+    }
+
 
 
 }
